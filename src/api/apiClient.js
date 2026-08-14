@@ -1,7 +1,4 @@
-import { createClient } from '@base44/sdk';
-import { appParams } from '@/lib/app-params';
-
-const { appId, token, functionsVersion, appBaseUrl } = appParams;
+// Pure standalone API client with default clinic data (Zero external backend dependencies)
 
 // Default Clinic Settings
 export const defaultClinicSettings = {
@@ -295,40 +292,14 @@ const entityProxyHandler = {
   }
 };
 
-let baseClient;
-try {
-  baseClient = createClient({
-    appId,
-    token,
-    functionsVersion,
-    serverUrl: '',
-    requiresAuth: false,
-    appBaseUrl
-  });
-} catch {
-  baseClient = {
-    auth: {
-      me: async () => null,
-      logout: () => {},
-      redirectToLogin: () => {}
-    },
-    appLogs: {
-      logUserInApp: async () => {}
-    }
-  };
-}
-
 export const apiClient = {
-  ...baseClient,
   auth: {
     me: async () => null,
     logout: () => {},
-    redirectToLogin: () => {},
-    ...(baseClient?.auth || {})
+    redirectToLogin: () => {}
   },
   appLogs: {
-    logUserInApp: async () => {},
-    ...(baseClient?.appLogs || {})
+    logUserInApp: async () => {}
   },
   entities: new Proxy(mockEntities, entityProxyHandler)
 };
