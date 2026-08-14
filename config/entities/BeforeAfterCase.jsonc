@@ -1,0 +1,44 @@
+{
+  "name": "BeforeAfterCase",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "Implantes",
+        "Invisalign",
+        "Est\u00e9tica",
+        "Clareamento"
+      ],
+      "description": "Categoria do caso"
+    },
+    "before_image": {
+      "type": "string",
+      "description": "Imagem antes"
+    },
+    "after_image": {
+      "type": "string",
+      "description": "Imagem depois"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o do caso"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags adicionais"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordem de exibi\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "category",
+    "before_image",
+    "after_image"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "ClinicSettings",
+  "type": "object",
+  "properties": {
+    "clinic_name": {
+      "type": "string",
+      "description": "Nome da cl\u00ednica"
+    },
+    "slogan": {
+      "type": "string",
+      "description": "Slogan da cl\u00ednica"
+    },
+    "average_rating": {
+      "type": "number",
+      "description": "Nota m\u00e9dia (ex: 4.9)"
+    },
+    "total_patients": {
+      "type": "string",
+      "description": "Total de pacientes atendidos (ex: 2.000+)"
+    },
+    "whatsapp": {
+      "type": "string",
+      "description": "N\u00famero do WhatsApp com c\u00f3digo do pa\u00eds"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefone fixo"
+    },
+    "email": {
+      "type": "string",
+      "description": "E-mail de contato"
+    },
+    "address": {
+      "type": "string",
+      "description": "Endere\u00e7o completo"
+    },
+    "neighborhood": {
+      "type": "string",
+      "description": "Bairro"
+    },
+    "city": {
+      "type": "string",
+      "description": "Cidade"
+    },
+    "working_hours": {
+      "type": "string",
+      "description": "Hor\u00e1rio de funcionamento"
+    },
+    "instagram": {
+      "type": "string",
+      "description": "Link do Instagram"
+    },
+    "facebook": {
+      "type": "string",
+      "description": "Link do Facebook"
+    },
+    "google_maps_embed": {
+      "type": "string",
+      "description": "URL do embed do Google Maps"
+    },
+    "hero_image": {
+      "type": "string",
+      "description": "Imagem principal do hero"
+    },
+    "about_text": {
+      "type": "string",
+      "description": "Texto sobre a cl\u00ednica"
+    },
+    "current_month_agenda": {
+      "type": "string",
+      "description": "Texto da agenda do m\u00eas (ex: Agenda de Mar\u00e7o aberta)"
+    }
+  },
+  "required": [
+    "clinic_name",
+    "whatsapp"
+  ]
+}

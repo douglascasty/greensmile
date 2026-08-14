@@ -1,0 +1,57 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do servi\u00e7o"
+    },
+    "slug": {
+      "type": "string",
+      "description": "Slug para URL"
+    },
+    "short_description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o curta (para cards)"
+    },
+    "long_description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o longa (para p\u00e1gina)"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista de benef\u00edcios"
+    },
+    "average_duration": {
+      "type": "string",
+      "description": "Tempo m\u00e9dio de tratamento"
+    },
+    "target_audience": {
+      "type": "string",
+      "description": "Para quem \u00e9 indicado"
+    },
+    "image": {
+      "type": "string",
+      "description": "Imagem do servi\u00e7o"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Nome do \u00edcone (lucide)"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "description": "Destacar na home?"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordem de exibi\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "name",
+    "short_description"
+  ]
+}

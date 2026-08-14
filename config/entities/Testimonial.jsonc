@@ -1,0 +1,48 @@
+{
+  "name": "Testimonial",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do paciente"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Nota de 1 a 5"
+    },
+    "text": {
+      "type": "string",
+      "description": "Texto do depoimento"
+    },
+    "photo": {
+      "type": "string",
+      "description": "Foto do paciente (opcional)"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "Google",
+        "Instagram",
+        "Manual"
+      ],
+      "description": "Origem do depoimento"
+    },
+    "service": {
+      "type": "string",
+      "description": "Servi\u00e7o realizado"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "description": "Destacar na home?"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordem de exibi\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "name",
+    "rating",
+    "text"
+  ]
+}
