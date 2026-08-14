@@ -68,13 +68,19 @@ function BeforeAfterCard({ caseItem }) {
 }
 
 export default function AntesDepois() {
-  const [cases, setCases] = useState([]);
+  const [cases, setCases] = useState(defaultCases);
   const [activeFilter, setActiveFilter] = useState("Todos");
 
   useEffect(() => {
     const loadCases = async () => {
-      const data = await base44.entities.BeforeAfterCase.list('order', 50);
-      setCases(data.length > 0 ? data : defaultCases);
+      try {
+        const data = await base44.entities.BeforeAfterCase.list('order', 50);
+        if (data && data.length > 0) {
+          setCases(data);
+        }
+      } catch (e) {
+        console.warn('Using default cases', e);
+      }
     };
     loadCases();
   }, []);

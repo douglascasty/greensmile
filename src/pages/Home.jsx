@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { apiClient as base44 } from '@/api/apiClient';
+import { 
+  apiClient as base44, 
+  defaultServices, 
+  defaultBeforeAfterCases, 
+  defaultTestimonials, 
+  defaultFAQs 
+} from '@/api/apiClient';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/home/AboutSection';
 import ServicesSection from '@/components/home/ServicesSection';
@@ -11,24 +17,28 @@ import FAQSection from '@/components/home/FAQSection';
 import LocationSection from '@/components/home/LocationSection';
 
 export default function Home({ settings }) {
-  const [services, setServices] = useState([]);
-  const [cases, setCases] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [faqs, setFaqs] = useState([]);
+  const [services, setServices] = useState(defaultServices);
+  const [cases, setCases] = useState(defaultBeforeAfterCases);
+  const [testimonials, setTestimonials] = useState(defaultTestimonials);
+  const [faqs, setFaqs] = useState(defaultFAQs);
 
   useEffect(() => {
     const loadData = async () => {
-      const [servicesData, casesData, testimonialsData, faqsData] = await Promise.all([
-        base44.entities.Service.list('order', 10),
-        base44.entities.BeforeAfterCase.list('order', 10),
-        base44.entities.Testimonial.list('order', 10),
-        base44.entities.FAQ.list('order', 20)
-      ]);
-      
-      setServices(servicesData);
-      setCases(casesData);
-      setTestimonials(testimonialsData);
-      setFaqs(faqsData);
+      try {
+        const [servicesData, casesData, testimonialsData, faqsData] = await Promise.all([
+          base44.entities.Service.list('order', 10),
+          base44.entities.BeforeAfterCase.list('order', 10),
+          base44.entities.Testimonial.list('order', 10),
+          base44.entities.FAQ.list('order', 20)
+        ]);
+        
+        if (servicesData?.length) setServices(servicesData);
+        if (casesData?.length) setCases(casesData);
+        if (testimonialsData?.length) setTestimonials(testimonialsData);
+        if (faqsData?.length) setFaqs(faqsData);
+      } catch (e) {
+        console.warn('Using default home data', e);
+      }
     };
     loadData();
   }, []);

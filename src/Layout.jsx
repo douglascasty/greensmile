@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { apiClient as base44 } from '@/api/apiClient';
+import { apiClient as base44, defaultClinicSettings } from '@/api/apiClient';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function Layout({ children, currentPageName }) {
-  const [settings, setSettings] = useState(null);
+  const [settings, setSettings] = useState(defaultClinicSettings);
 
   useEffect(() => {
     const loadSettings = async () => {
-      const data = await base44.entities.ClinicSettings.list();
-      if (data.length > 0) {
-        setSettings(data[0]);
+      try {
+        const data = await base44.entities.ClinicSettings.list();
+        if (data && data.length > 0) {
+          setSettings(data[0]);
+        }
+      } catch (e) {
+        console.warn('Using default clinic settings', e);
       }
     };
     loadSettings();
