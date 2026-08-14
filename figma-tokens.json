@@ -1,0 +1,95 @@
+{
+  "global": {
+    "color": {
+      "primary": {
+        "dark": { "value": "#1B4332", "type": "color", "description": "Verde Floresta Primário da Marca" },
+        "emerald": { "value": "#2D6A4F", "type": "color", "description": "Verde Esmeralda para Ícones e Acentos" }
+      },
+      "accent": {
+        "gold": { "value": "#D4A373", "type": "color", "description": "Ouro Champagne para Botões e Destaques" },
+        "goldHover": { "value": "#C49566", "type": "color", "description": "Ouro Escuro para Hover States" },
+        "yellow": { "value": "#E9C46A", "type": "color", "description": "Ouro Claro para Textos do Hero" }
+      },
+      "surface": {
+        "sand": { "value": "#F5F0E8", "type": "color", "description": "Fundo Marfim / Areia Suave" },
+        "white": { "value": "#FFFFFF", "type": "color", "description": "Branco Puro para Cards e Superfícies" },
+        "dark": { "value": "#1B4332", "type": "color", "description": "Superfície Escura para Header e Footer" }
+      },
+      "brand": {
+        "whatsapp": { "value": "#25D366", "type": "color", "description": "Verde Oficial do WhatsApp" }
+      },
+      "text": {
+        "primary": { "value": "#1B4332", "type": "color", "description": "Texto Principal" },
+        "secondary": { "value": "#52796F", "type": "color", "description": "Texto Secundário / Descrições" },
+        "light": { "value": "#FFFFFF", "type": "color", "description": "Texto Claro sobre Fundo Escuro" },
+        "gold": { "value": "#D4A373", "type": "color", "description": "Texto Dourado de Destaque" }
+      }
+    },
+    "fontFamilies": {
+      "heading": { "value": "Playfair Display", "type": "fontFamilies" },
+      "body": { "value": "Inter", "type": "fontFamilies" }
+    },
+    "fontSizes": {
+      "hero": { "value": "56px", "type": "fontSizes" },
+      "h1": { "value": "48px", "type": "fontSizes" },
+      "h2": { "value": "36px", "type": "fontSizes" },
+      "h3": { "value": "24px", "type": "fontSizes" },
+      "bodyLarge": { "value": "18px", "type": "fontSizes" },
+      "body": { "value": "16px", "type": "fontSizes" },
+      "small": { "value": "14px", "type": "fontSizes" },
+      "badge": { "value": "12px", "type": "fontSizes" }
+    },
+    "borderRadius": {
+      "small": { "value": "8px", "type": "borderRadius" },
+      "medium": { "value": "12px", "type": "borderRadius" },
+      "large": { "value": "16px", "type": "borderRadius" },
+      "card": { "value": "24px", "type": "borderRadius" },
+      "pill": { "value": "9999px", "type": "borderRadius" }
+    },
+    "spacing": {
+      "xs": { "value": "4px", "type": "spacing" },
+      "sm": { "value": "8px", "type": "spacing" },
+      "md": { "value": "16px", "type": "spacing" },
+      "lg": { "value": "24px", "type": "spacing" },
+      "xl": { "value": "32px", "type": "spacing" },
+      "2xl": { "value": "48px", "type": "spacing" },
+      "3xl": { "value": "64px", "type": "spacing" },
+      "section": { "value": "96px", "type": "spacing" }
+    },
+    "boxShadow": {
+      "card": {
+        "value": {
+          "x": "0",
+          "y": "4",
+          "blur": "20",
+          "spread": "0",
+          "color": "rgba(27, 67, 50, 0.08)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow"
+      },
+      "cardHover": {
+        "value": {
+          "x": "0",
+          "y": "12",
+          "blur": "32",
+          "spread": "0",
+          "color": "rgba(27, 67, 50, 0.15)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow"
+      },
+      "whatsappFloating": {
+        "value": {
+          "x": "0",
+          "y": "8",
+          "blur": "24",
+          "spread": "0",
+          "color": "rgba(37, 211, 102, 0.35)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow"
+      }
+    }
+  }
+}
